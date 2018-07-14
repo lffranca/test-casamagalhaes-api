@@ -1,0 +1,28 @@
+version: '3'
+services:
+  redis:
+    container_name: casamagalhaes_redis
+    build:
+      context: .
+      dockerfile: ./docker/redis/Dockerfile
+    ports:
+      - 6379:6379
+    networks:
+      enel:
+        aliases:
+          - redis
+  mysql:
+    container_name: casamagalhaes_api
+    build:
+      context: .
+      dockerfile: ./docker/mysql/Dockerfile
+    env_file:
+      - ./docker/mysql/.env
+    ports:
+      - 3306:3306
+    networks:
+      casa:
+        aliases:
+          - mysql
+networks:
+  casa:

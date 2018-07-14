@@ -1,0 +1,20 @@
+{
+  "name": "casamagalhaes-api",
+  "version": "1.0.0",
+  "description": "API casa magalhaes",
+  "main": "index.js",
+  "repository": "git@bitbucket.org:casamagalhaes/casamagalhaes-api.git",
+  "author": "Lucas França <lucasfranca.dev@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "sequelize": "sequelize"
+  },
+  "dependencies": {
+    "sequelize": "^4.38.0",
+    "socket.io": "^2.1.1"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^4.0.0"
+  }
+}
