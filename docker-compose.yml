@@ -24,6 +24,22 @@ services:
       casa:
         aliases:
           - mysql
+  rabbitmq:
+    build:
+      context: .
+      dockerfile: ./docker/rabbitmq/Dockerfile
+    container_name: casamagalhaes_rabbitmq
+    env_file:
+      - ./docker/rabbitmq/.env
+    ports:
+      - 25672:25672
+      - 4369:4369
+      - 5671:5671
+      - 5672:5672
+    networks:
+      casa:
+        aliases:
+          - rabbitmq
   api:
     container_name: casamagalhaes_api
     build:
@@ -35,6 +51,7 @@ services:
     env_file:
       - ./docker/node-api/.env
       - ./docker/mysql/.env
+      - ./docker/rabbitmq/.env
       - ./docker/redis/.env
     ports:
       - 3000:3000
