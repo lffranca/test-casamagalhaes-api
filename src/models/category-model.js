@@ -6,8 +6,6 @@ const getCategories = async () => {
     raw: true
   })
 
-  console.log(data)
-
   return arrayToTree(data, {
     parentProperty: 'parentId',
     customID: 'id'
