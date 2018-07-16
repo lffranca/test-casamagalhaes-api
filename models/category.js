@@ -4,8 +4,8 @@ module.exports = (sequelize, DataTypes) => {
     description: DataTypes.STRING
   }, {});
   Category.associate = function(models) {
-    Category.hasMany( Category, { as: 'childs', hierarchy: true } )
-    Category.belongsTo( Category, { as: 'parent', hierarchy: true } )
+    Category.hasMany( Category, { as: 'childs', foreignKey: 'parentId', hierarchy: true } )
+    Category.belongsTo( Category, { as: 'parent', foreignKey: 'parentId', hierarchy: true } )
   };
   return Category;
 };
