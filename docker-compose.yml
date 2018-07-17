@@ -1,16 +1,16 @@
 version: '3'
 services:
-  redis:
-    container_name: casamagalhaes_redis
-    build:
-      context: .
-      dockerfile: ./docker/redis/Dockerfile
-    ports:
-      - 6379:6379
-    networks:
-      casa:
-        aliases:
-          - redis
+  # redis:
+  #   container_name: casamagalhaes_redis
+  #   build:
+  #     context: .
+  #     dockerfile: ./docker/redis/Dockerfile
+  #   ports:
+  #     - 6379:6379
+  #   networks:
+  #     casa:
+  #       aliases:
+  #         - redis
   mysql:
     container_name: casamagalhaes_mysql
     build:
@@ -24,22 +24,22 @@ services:
       casa:
         aliases:
           - mysql
-  rabbitmq:
-    build:
-      context: .
-      dockerfile: ./docker/rabbitmq/Dockerfile
-    container_name: casamagalhaes_rabbitmq
-    env_file:
-      - ./docker/rabbitmq/.env
-    ports:
-      - 25672:25672
-      - 4369:4369
-      - 5671:5671
-      - 5672:5672
-    networks:
-      casa:
-        aliases:
-          - rabbitmq
+  # rabbitmq:
+  #   build:
+  #     context: .
+  #     dockerfile: ./docker/rabbitmq/Dockerfile
+  #   container_name: casamagalhaes_rabbitmq
+  #   env_file:
+  #     - ./docker/rabbitmq/.env
+  #   ports:
+  #     - 25672:25672
+  #     - 4369:4369
+  #     - 5671:5671
+  #     - 5672:5672
+  #   networks:
+  #     casa:
+  #       aliases:
+  #         - rabbitmq
   api:
     container_name: casamagalhaes_api
     build:
