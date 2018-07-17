@@ -26,4 +26,12 @@ const createCategory = async ({description, parentId}) => {
   return data
 }
 
-module.exports = {getCategories, updateCategory, createCategory}
+const deleteCategory = async (id) => {
+  const data = await Category.destroy({
+    where: {id}
+  })
+
+  return data
+}
+
+module.exports = {getCategories, updateCategory, createCategory, deleteCategory}
