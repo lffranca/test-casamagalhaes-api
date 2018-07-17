@@ -51,8 +51,8 @@ services:
     env_file:
       - ./docker/node-api/.env
       - ./docker/mysql/.env
-      - ./docker/rabbitmq/.env
-      - ./docker/redis/.env
+      # - ./docker/rabbitmq/.env
+      # - ./docker/redis/.env
     ports:
       - 3000:3000
     networks:
