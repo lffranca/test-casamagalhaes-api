@@ -23,4 +23,4 @@ const {EVENT_CATEGORY_CONNECTION} = require('../constants/category/event-constan
 const connectionCategoryEvent = require('./controllers/category/connection-controller')
 
 const categorySocket = io.of('/category')
-  .on(EVENT_CATEGORY_CONNECTION, connectionCategoryEvent)
+  .on(EVENT_CATEGORY_CONNECTION, (socket) => connectionCategoryEvent(categorySocket, socket))
